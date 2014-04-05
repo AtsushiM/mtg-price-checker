@@ -1,0 +1,31 @@
+<h1>Listing card_prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>CardID</th>
+      <th>Price</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_prices.each do |card_price| %>
+      <tr>
+        <td><%= card_price.id %></td>
+        <td><%= card_price.card_id %></td>
+        <td><%= card_price.price %></td>
+        <td><%= card_price.time %></td>
+        <td><%= link_to 'Show', card_price %></td>
+        <td><%= link_to 'Edit', edit_card_price_path(card_price) %></td>
+        <td><%= link_to 'Destroy', card_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card price', new_card_price_path %>

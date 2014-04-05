@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name_jp: MyString
+  name_en: MyString
+  card_price_id: 
+
+two:
+  name_jp: MyString
+  name_en: MyString
+  card_price_id: 

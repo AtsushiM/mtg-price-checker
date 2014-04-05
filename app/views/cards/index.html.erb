@@ -1,0 +1,40 @@
+<h1>Listing cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name jp</th>
+      <th>Name en</th>
+      <th>Purchase price</th>
+      <th>Now Price</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.id %></td>
+        <td><%= card.name_jp %></td>
+        <td><%= card.name_en %></td>
+        <td><%= card.purchase_price %></td>
+        <td>
+          <% if card.card_prices.count > 0 %>
+              <%= card.card_prices.last.price %>
+          <% else %>
+            none
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>
